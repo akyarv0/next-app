@@ -11,7 +11,7 @@ const URL = `http://localhost:8080/users`;
 //* force-cache
 export async function getUsers() {
   //* By default, Next.js automatically caches the returned values of fetch
-  const res = await fetch(URL, {next: {revalidate: 10}});
+  const res = await fetch(URL);
   // 'force-cache' is the default, and can be omitted
   //  const res = await fetch(URL, { cache: 'force-cache' });
 
@@ -22,3 +22,6 @@ export async function getUsers() {
   const data = await res.json();
   return data;
 }
+
+
+
